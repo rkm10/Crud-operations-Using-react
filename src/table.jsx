@@ -1,4 +1,9 @@
 function Table(props) {
+
+      let edit = (event, data) => {
+            event.preventDefault()
+            props.edit(data)
+      }
       return (
             <div className="overflow-x-auto flex justify-center items-center w-screen">
                   <table className="table w-2/4" >
@@ -18,8 +23,8 @@ function Table(props) {
                                                 <td>{data.id}</td>
                                                 <td>{data.name}</td>
                                                 <td>{data.price}</td>
-                                                <td>{data.catagory}</td>
-                                                <td> <button className="btn btn-primary">Edit</button> <button className="btn btn-secondary" onClick={() => {
+                                                <td>{data.category}</td>
+                                                <td> <button className="btn btn-primary" onClick={(event) => { edit(event, data) }}>Edit</button> <button className="btn btn-secondary" onClick={() => {
                                                       props.delete(data.id)
                                                 }}>Delete</button></td>
                                           </tr>

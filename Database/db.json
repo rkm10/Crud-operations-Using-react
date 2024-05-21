@@ -1,16 +1,70 @@
 {
-  "Products": [
+  "products": [
     {
-      "id": "1",
-      "name": "oneplus",
-      "price": 24000,
-      "catagory": "tv"
+      "name": "oneplus tv",
+      "id": "2",
+      "price": "54900",
+      "category": "mobiles"
     },
     {
-      "id": "5",
       "name": "oneplus",
-      "price": 24000,
-      "catagory": "tv"
+      "category": "laptop",
+      "price": "64900654",
+      "id": "3"
+    },
+    {
+      "name": "raj",
+      "category": "tv",
+      "price": "9999312",
+      "id": "cddd"
+    },
+    {
+      "name": "qwe",
+      "category": "laptops",
+      "price": "2134124",
+      "id": "2d84"
+    },
+    {
+      "name": "ads",
+      "category": "laptops",
+      "price": "213133",
+      "id": "4a55"
+    },
+    {
+      "name": "rajkumar",
+      "category": "mobiles",
+      "price": "124124235423",
+      "id": "9dec"
+    },
+    {
+      "name": "rajkumar",
+      "category": "mobiles",
+      "price": "2141234",
+      "id": "edc4"
+    },
+    {
+      "name": "new",
+      "category": "laptops",
+      "price": "2313",
+      "id": "74af"
+    },
+    {
+      "id": "e017",
+      "name": "rajkumar",
+      "price": "123",
+      "category": "mobiles"
+    },
+    {
+      "id": "3427",
+      "name": "dell ra",
+      "price": "21442",
+      "category": "tv"
+    },
+    {
+      "id": "b07c",
+      "name": "rajkumar mobile",
+      "price": "53222",
+      "category": "-1"
     }
   ]
 }
