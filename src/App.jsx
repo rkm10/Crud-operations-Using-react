@@ -1,36 +1,44 @@
-import React, { useState } from "react"
-import './App.css'
-import reactDom from 'react-dom'
-
-
-
-function Modal(props) {
-  return (
-    reactDom.createPortal(
-      <div className="modal-overlay">
-        <div className="content">
-          <h1>This is heading</h1>
-          <p>this is modal content</p>
-          <button className="btn btn-danger" onClick={props.close}>close</button>
-        </div>
-      </div>, document.getElementById('modal-root')
-    )
-  )
-
-}
+import React, { useEffect, useState } from "react"
+import Form from "./assets/form"
+import Table from "./table"
+import { deteleData, getData } from "./api"
 
 function App() {
-  const [showModal, setShowModal] = useState()
-  function toggleModal() {
-    setShowModal(!showModal)
+  const [openForm, setOpenForm] = useState(false)
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    getProducts()
+  }, []
+  )
+
+  let getProducts = async () => {
+    let res = await getData();
+    setProducts(res.data)
+  }
+  let deleteProducts = async (id) => {
+    await deteleData(id);
+    getProducts()
+  }
+  let showForm = () => {
+    setOpenForm(true)
   }
 
-
+  let closeForm = () => {
+    setOpenForm(false)
+  }
   return (
-    <div className="app">
-      <button className="btn btn-primary" onClick={toggleModal}>open modal</button>
-      {showModal && <Modal close={toggleModal}></Modal>}
-    </div>
+    <>
+      <div className="container justify-items-center items-center text-center py-10">
+        <h2>CRUD operations</h2>
+        <button className="btn btn-accent" onClick={() => { showForm() }}>Add Products</button>
+        <div className="hero bg-base-200 m-5">
+          <Table products={products} delete={deleteProducts} />
+          {
+            openForm && <Form close={closeForm}></Form>
+          }
+        </div>
+      </div>
+    </>
   )
 }
 export default App

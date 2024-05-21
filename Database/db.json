@@ -1,0 +1,16 @@
+{
+  "Products": [
+    {
+      "id": "1",
+      "name": "oneplus",
+      "price": 24000,
+      "catagory": "tv"
+    },
+    {
+      "id": "5",
+      "name": "oneplus",
+      "price": 24000,
+      "catagory": "tv"
+    }
+  ]
+}
